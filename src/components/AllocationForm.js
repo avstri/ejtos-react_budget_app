@@ -10,7 +10,7 @@ const AllocationForm=(props)=>{
     const submitEvent = () => {
 
         if (cost>remaining){
-            alert("The value cannot exceed remaining funds " + {currency}+{remaining} )
+            alert(`The value cannot exceed remaining funds ${currency}${remaining}` )
             setCost("");
             return;
         }
@@ -53,12 +53,14 @@ const AllocationForm=(props)=>{
                 <label className="input-group-text" htmlFor="inputGroupSelect02">Allocation</label>
                   </div>
                   <select className="custom-select" id="inputGroupSelect02" onChange={(event) => setAction(event.target.value)}>
-                        <option defaultValue value="Add" name="Add">Add</option>
-                <option value="Reduce" name="Reduce">Reduce</option>
+                    <option defaultValue value="Add" name="Add">Add</option>
+                    <option value="Reduce" name="Reduce">Reduce</option>
                   </select>
                     <input
                         required='required'
                         type='number'
+                        min='0'
+                        max={remaining}
                         id='cost'
                         value={cost}
                         style={{ marginLeft: '2rem' , size: 10}}
