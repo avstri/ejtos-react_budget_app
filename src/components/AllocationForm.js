@@ -55,7 +55,10 @@ const AllocationForm=(props)=>{
                   <select className="custom-select" id="inputGroupSelect02" onChange={(event) => setAction(event.target.value)}>
                     <option defaultValue value="Add" name="Add">Add</option>
                     <option value="Reduce" name="Reduce">Reduce</option>
-                  </select>
+                    </select>
+                    <label
+                        style={{ marginLeft: '1rem', marginTop:'0.35rem', verticalAlign: 'middle'}}
+                    >{currency}</label>
                     <input
                         required='required'
                         type='number'
@@ -63,7 +66,8 @@ const AllocationForm=(props)=>{
                         max={remaining}
                         id='cost'
                         value={cost}
-                        style={{ marginLeft: '2rem' , size: 10}}
+                        label={currency}
+                        style={{ marginLeft:'5px', size: 10}}
                         onChange={(event) => setCost(event.target.value)}>
                         </input>
                     <button className="btn btn-primary" onClick={submitEvent} style={{ marginLeft: '2rem' }}>

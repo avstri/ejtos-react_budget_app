@@ -1,4 +1,16 @@
-.Currency{
+.greenSelector{
     color: black;
     background-color: lightgreen;
+    font-size: larger;
+    padding: 16px;    
+    margin: 0px 0px 16px;
+    border-radius: 8px;
+
+}
+
+.greenSelector2{
+    color: black;
+    
+    background-color: lightgreen;
+    border-style: none;
 }
